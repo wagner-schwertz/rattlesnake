@@ -60,10 +60,12 @@ export default function LastPressedKey() {
   useEffect(() => {
     window.addEventListener("keydown", downHandler);
     window.addEventListener("click", handleClick);
+    window.addEventListener("touchstart", handleClick);
     // Remove event listeners on cleanup
     return () => {
       window.removeEventListener("keydown", downHandler);
       window.removeEventListener("click", handleClick);
+      window.removeEventListener("touchstart", handleClick);
     };
   }, []); // Empty array ensures that effect is only run on mount and unmount
 
