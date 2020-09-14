@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "85634b2572799890c5f83bddf5c8c326",
+    "revision": "bf374cd05477be653d04f49f571abce0",
     "url": "/rattlesnake/index.html"
   },
   {
