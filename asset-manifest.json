@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/rattlesnake/static/js/main.2f127547.chunk.js",
-    "main.js.map": "/rattlesnake/static/js/main.2f127547.chunk.js.map",
+    "main.js": "/rattlesnake/static/js/main.0fe91adb.chunk.js",
+    "main.js.map": "/rattlesnake/static/js/main.0fe91adb.chunk.js.map",
     "runtime-main.js": "/rattlesnake/static/js/runtime-main.6e307b56.js",
     "runtime-main.js.map": "/rattlesnake/static/js/runtime-main.6e307b56.js.map",
     "static/js/2.bafea0fa.chunk.js": "/rattlesnake/static/js/2.bafea0fa.chunk.js",
     "static/js/2.bafea0fa.chunk.js.map": "/rattlesnake/static/js/2.bafea0fa.chunk.js.map",
     "index.html": "/rattlesnake/index.html",
-    "precache-manifest.911e1672e83b435abc1e085c4248bbae.js": "/rattlesnake/precache-manifest.911e1672e83b435abc1e085c4248bbae.js",
+    "precache-manifest.713d94316737d0e82f645c7b08849162.js": "/rattlesnake/precache-manifest.713d94316737d0e82f645c7b08849162.js",
     "service-worker.js": "/rattlesnake/service-worker.js",
     "static/js/2.bafea0fa.chunk.js.LICENSE.txt": "/rattlesnake/static/js/2.bafea0fa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6e307b56.js",
     "static/js/2.bafea0fa.chunk.js",
-    "static/js/main.2f127547.chunk.js"
+    "static/js/main.0fe91adb.chunk.js"
   ]
 }
