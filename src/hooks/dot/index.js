@@ -13,6 +13,7 @@ export default function () {
       };
     } while (
       snakeArray.find(
+        // eslint-disable-next-line no-loop-func
         (element) => JSON.stringify(element) === JSON.stringify(randomPos)
       )
     );

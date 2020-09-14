@@ -9,6 +9,7 @@ export const Grid = styled.div`
   grid-template-columns: repeat(20, 1fr);
   grid-template-rows: repeat(20, 1fr);
   background-color: #7c9171;
+  margin-top: calc((100vh - min(100vw, 100vh)) / 2);
 `;
 
 export const Div = styled.div`

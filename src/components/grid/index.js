@@ -28,6 +28,7 @@ export default function Grd() {
   // first time loading
   useEffect(() => {
     deployDot(position);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

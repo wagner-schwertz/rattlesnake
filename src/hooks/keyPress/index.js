@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useRef, useEffect } from "react";
 
 export default function LastPressedKey() {
   // State for keeping track of whether key is pressed
@@ -24,6 +24,34 @@ export default function LastPressedKey() {
     }
   }
 
+  function handleClick(e) {
+    const rel = { x: e.x / window.innerWidth, y: e.y / window.innerHeight };
+    if (queue.current) {
+      if (rel.x < rel.y) {
+        if (rel.x < 1 - rel.y) {
+          if (direction.current !== "RIGHT") {
+            direction.current = "LEFT";
+          }
+        } else {
+          if (direction.current !== "UP") {
+            direction.current = "DOWN";
+          }
+        }
+      } else {
+        if (rel.y < 1 - rel.x) {
+          if (direction.current !== "DOWN") {
+            direction.current = "UP";
+          }
+        } else {
+          if (direction.current !== "LEFT") {
+            direction.current = "RIGHT";
+          }
+        }
+      }
+    }
+    queue.current = false;
+  }
+
   const resetQueue = () => {
     queue.current = true;
   };
@@ -31,7 +59,12 @@ export default function LastPressedKey() {
   // Add event listeners
   useEffect(() => {
     window.addEventListener("keydown", downHandler);
+    window.addEventListener("click", handleClick);
     // Remove event listeners on cleanup
+    return () => {
+      window.removeEventListener("keydown", downHandler);
+      window.removeEventListener("click", handleClick);
+    };
   }, []); // Empty array ensures that effect is only run on mount and unmount
 
   return { pressedDirection: direction.current, resetQueue };
