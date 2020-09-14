@@ -24,9 +24,13 @@ export default function () {
     setDotScore((prev) => prev + 1);
   };
 
+  const resetScore = () => {
+    setDotScore(0);
+  };
+
   React.useEffect(() => {
     document.title = `Score: ${dotScore}`;
   }, [dotScore]);
 
-  return { score, deployDot, dotPosition: dotPosition };
+  return { score, deployDot, dotPosition: dotPosition, resetScore };
 }

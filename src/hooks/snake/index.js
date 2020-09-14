@@ -33,13 +33,13 @@ export default function () {
     if (newPosition.x === 21) {
       newPosition.x = 1;
     }
-    if (newPosition.x === -1) {
+    if (newPosition.x === 0) {
       newPosition.x = 20;
     }
     if (newPosition.y === 21) {
       newPosition.y = 1;
     }
-    if (newPosition.y === -1) {
+    if (newPosition.y === 0) {
       newPosition.y = 20;
     }
     //check if snake did catch the dot to adjust the array length
@@ -55,7 +55,17 @@ export default function () {
     setDidCatch(true);
   };
 
-  return { position, move, grow };
+  const resetSnake = () => {
+    setDidCatch(false);
+    setPosition([
+      { x: 5, y: 10 },
+      { x: 4, y: 10 },
+      { x: 3, y: 10 },
+      { x: 2, y: 10 },
+    ]);
+  };
+
+  return { position, move, grow, resetSnake };
 }
 
 // import React from "react";

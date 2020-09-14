@@ -21,9 +21,9 @@ const checkDotCollision = (headPosition, dotPosition) => {
 export default function Grd() {
   const [gameState, setGameState] = useState("RUNNING");
   const gameSpeed = React.useRef(100);
-  const { pressedDirection, resetQueue } = useDirectionKey();
-  const { position, move, grow } = useSnake();
-  const { score, deployDot, dotPosition } = useDot();
+  const { pressedDirection, resetQueue, resetDirection } = useDirectionKey();
+  const { position, move, grow, resetSnake } = useSnake();
+  const { score, deployDot, dotPosition, resetScore } = useDot();
 
   // first time loading
   useEffect(() => {
@@ -52,6 +52,15 @@ export default function Grd() {
     };
   });
 
+  const handleReset = () => {
+    resetSnake();
+    gameSpeed.current = 100;
+    resetScore();
+    deployDot(position);
+    setGameState("RUNNING");
+    resetDirection();
+  };
+
   if (gameState !== "DEFEAT") {
     return (
       <Grid>
@@ -64,6 +73,6 @@ export default function Grd() {
   }
 
   if (gameState === "DEFEAT") {
-    return <GameOver />;
+    return <GameOver handleReset={handleReset} />;
   }
 }

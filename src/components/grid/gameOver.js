@@ -10,15 +10,17 @@ const Toggler = () => {
   return { on: on, toggle };
 };
 
-export default function () {
+export default function (props) {
   const { on, toggle } = Toggler();
 
   useEffect(() => {
+    window.addEventListener("keydown", props.handleReset);
     const timer = setInterval(() => {
       toggle();
     }, 300);
     return () => {
       clearInterval(timer);
+      window.removeEventListener("keydown", props.handleReset);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

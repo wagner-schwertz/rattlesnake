@@ -56,6 +56,11 @@ export default function LastPressedKey() {
     queue.current = true;
   };
 
+  const resetDirection = () => {
+    direction.current = "RIGHT";
+    queue.current = false;
+  };
+
   // Add event listeners
   useEffect(() => {
     window.addEventListener("keydown", downHandler);
@@ -69,5 +74,5 @@ export default function LastPressedKey() {
     };
   }, []); // Empty array ensures that effect is only run on mount and unmount
 
-  return { pressedDirection: direction.current, resetQueue };
+  return { pressedDirection: direction.current, resetQueue, resetDirection };
 }
