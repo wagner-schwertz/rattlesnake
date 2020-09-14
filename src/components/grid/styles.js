@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Grid = styled.div`
+  position: relative;
   border: 1px solid black;
   height: min(100vh, 100vw);
   width: min(100vh, 100vw);
@@ -20,4 +21,26 @@ export const Div = styled.div`
   grid-row: ${(props) => props.y};
   border: none;
   background-color: #526348;
+`;
+
+export const ButtonLeft = styled.button`
+  position: fixed;
+  height: 100vh;
+  width: 50vw;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+`;
+
+export const ButtonRight = styled.button`
+  position: fixed;
+  height: 100vh;
+  width: 50vw;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
 `;

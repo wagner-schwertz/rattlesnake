@@ -24,32 +24,31 @@ export default function LastPressedKey() {
     }
   }
 
-  function handleClick(e) {
-    const rel = { x: e.x / window.innerWidth, y: e.y / window.innerHeight };
+  function handleButton(dir) {
     if (queue.current) {
-      if (rel.x < rel.y) {
-        if (rel.x < 1 - rel.y) {
-          if (direction.current !== "RIGHT") {
-            direction.current = "LEFT";
-          }
-        } else {
-          if (direction.current !== "UP") {
-            direction.current = "DOWN";
-          }
+      if (dir === "RIGHT") {
+        if (direction.current === "UP") {
+          direction.current = "RIGHT";
+        } else if (direction.current === "RIGHT") {
+          direction.current = "DOWN";
+        } else if (direction.current === "DOWN") {
+          direction.current = "LEFT";
+        } else if (direction.current === "LEFT") {
+          direction.current = "UP";
         }
       } else {
-        if (rel.y < 1 - rel.x) {
-          if (direction.current !== "DOWN") {
-            direction.current = "UP";
-          }
-        } else {
-          if (direction.current !== "LEFT") {
-            direction.current = "RIGHT";
-          }
+        if (direction.current === "UP") {
+          direction.current = "LEFT";
+        } else if (direction.current === "LEFT") {
+          direction.current = "DOWN";
+        } else if (direction.current === "DOWN") {
+          direction.current = "RIGHT";
+        } else if (direction.current === "RIGHT") {
+          direction.current = "UP";
         }
       }
+      queue.current = false;
     }
-    queue.current = false;
   }
 
   const resetQueue = () => {
@@ -64,15 +63,16 @@ export default function LastPressedKey() {
   // Add event listeners
   useEffect(() => {
     window.addEventListener("keydown", downHandler);
-    window.addEventListener("click", handleClick);
-    window.addEventListener("touchstart", handleClick);
     // Remove event listeners on cleanup
     return () => {
       window.removeEventListener("keydown", downHandler);
-      window.removeEventListener("click", handleClick);
-      window.removeEventListener("touchstart", handleClick);
     };
   }, []); // Empty array ensures that effect is only run on mount and unmount
 
-  return { pressedDirection: direction.current, resetQueue, resetDirection };
+  return {
+    pressedDirection: direction.current,
+    resetQueue,
+    resetDirection,
+    handleButton,
+  };
 }
