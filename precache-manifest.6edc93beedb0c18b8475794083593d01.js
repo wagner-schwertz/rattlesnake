@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d28004f88d208cfa9394b484abc39a27",
+    "revision": "fea5df1fce00b48069b0facc419fc36a",
     "url": "/rattlesnake/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rattlesnake/static/js/2.bafea0fa.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b03e04c807604eb4875b",
-    "url": "/rattlesnake/static/js/main.9f696794.chunk.js"
+    "revision": "65a3ebdef9d9b97fefd9",
+    "url": "/rattlesnake/static/js/main.9c100e26.chunk.js"
   },
   {
     "revision": "d53cf995d7adf902837f",
