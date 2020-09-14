@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/rattlesnake/static/js/main.9c100e26.chunk.js",
-    "main.js.map": "/rattlesnake/static/js/main.9c100e26.chunk.js.map",
+    "main.js": "/rattlesnake/static/js/main.ded70ecc.chunk.js",
+    "main.js.map": "/rattlesnake/static/js/main.ded70ecc.chunk.js.map",
     "runtime-main.js": "/rattlesnake/static/js/runtime-main.6e307b56.js",
     "runtime-main.js.map": "/rattlesnake/static/js/runtime-main.6e307b56.js.map",
-    "static/js/2.bafea0fa.chunk.js": "/rattlesnake/static/js/2.bafea0fa.chunk.js",
-    "static/js/2.bafea0fa.chunk.js.map": "/rattlesnake/static/js/2.bafea0fa.chunk.js.map",
+    "static/js/2.16cb73ac.chunk.js": "/rattlesnake/static/js/2.16cb73ac.chunk.js",
+    "static/js/2.16cb73ac.chunk.js.map": "/rattlesnake/static/js/2.16cb73ac.chunk.js.map",
     "index.html": "/rattlesnake/index.html",
-    "precache-manifest.6edc93beedb0c18b8475794083593d01.js": "/rattlesnake/precache-manifest.6edc93beedb0c18b8475794083593d01.js",
+    "precache-manifest.1598bb6566c63ca8a693f896204d30e6.js": "/rattlesnake/precache-manifest.1598bb6566c63ca8a693f896204d30e6.js",
     "service-worker.js": "/rattlesnake/service-worker.js",
-    "static/js/2.bafea0fa.chunk.js.LICENSE.txt": "/rattlesnake/static/js/2.bafea0fa.chunk.js.LICENSE.txt"
+    "static/js/2.16cb73ac.chunk.js.LICENSE.txt": "/rattlesnake/static/js/2.16cb73ac.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6e307b56.js",
-    "static/js/2.bafea0fa.chunk.js",
-    "static/js/main.9c100e26.chunk.js"
+    "static/js/2.16cb73ac.chunk.js",
+    "static/js/main.ded70ecc.chunk.js"
   ]
 }
