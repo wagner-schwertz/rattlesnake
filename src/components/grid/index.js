@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Div, ButtonLeft, ButtonRight } from "./styles";
+import { Grid, Div } from "./styles";
 import useDirectionKey from "../../hooks/keyPress";
 import useSnake from "../../hooks/snake";
 import useDot from "../../hooks/dot";
@@ -21,12 +21,7 @@ const checkDotCollision = (headPosition, dotPosition) => {
 export default function Grd() {
   const [gameState, setGameState] = useState("RUNNING");
   const gameSpeed = React.useRef(100);
-  const {
-    pressedDirection,
-    resetQueue,
-    resetDirection,
-    handleButton,
-  } = useDirectionKey();
+  const { pressedDirection, resetQueue, resetDirection } = useDirectionKey();
   const { position, move, grow, resetSnake } = useSnake();
   const { score, deployDot, dotPosition, resetScore } = useDot();
 
@@ -69,8 +64,6 @@ export default function Grd() {
   if (gameState !== "DEFEAT") {
     return (
       <Grid>
-        <ButtonLeft onClick={() => handleButton("LEFT")} />
-        <ButtonRight onClick={() => handleButton("RIGHT")} />
         <Div x={dotPosition.x} y={dotPosition.y} />
         {position.map((segment) => (
           <Div x={segment.x} y={segment.y} />

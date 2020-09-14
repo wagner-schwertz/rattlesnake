@@ -9,5 +9,6 @@ export const GlobalStyle = createGlobalStyle`
 
 html, body, #root {
   background-color: black;
+  touch-action: manipulation;
 }
 `;

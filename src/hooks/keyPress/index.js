@@ -24,9 +24,11 @@ export default function LastPressedKey() {
     }
   }
 
-  function handleButton(dir) {
+  function handleButton(e) {
+    console.log(e.touches[0].pageX);
+    console.log(window.innerWidth);
     if (queue.current) {
-      if (dir === "RIGHT") {
+      if (e.touches[0].pageX > window.innerWidth / 2) {
         if (direction.current === "UP") {
           direction.current = "RIGHT";
         } else if (direction.current === "RIGHT") {
@@ -63,9 +65,11 @@ export default function LastPressedKey() {
   // Add event listeners
   useEffect(() => {
     window.addEventListener("keydown", downHandler);
+    window.addEventListener("touchstart", handleButton, false);
     // Remove event listeners on cleanup
     return () => {
       window.removeEventListener("keydown", downHandler);
+      window.removeEventListener("touchstart", handleButton, false);
     };
   }, []); // Empty array ensures that effect is only run on mount and unmount
 
@@ -73,6 +77,5 @@ export default function LastPressedKey() {
     pressedDirection: direction.current,
     resetQueue,
     resetDirection,
-    handleButton,
   };
 }

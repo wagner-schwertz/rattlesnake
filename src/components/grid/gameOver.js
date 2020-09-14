@@ -15,14 +15,12 @@ export default function (props) {
 
   useEffect(() => {
     window.addEventListener("keydown", props.handleReset);
-    window.addEventListener("click", (event) => {});
     const timer = setInterval(() => {
       toggle();
     }, 300);
     return () => {
       clearInterval(timer);
       window.removeEventListener("keydown", props.handleReset);
-      window.removeEventListener("click", (event) => {});
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

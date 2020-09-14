@@ -22,32 +22,3 @@ export const Div = styled.div`
   border: none;
   background-color: #526348;
 `;
-
-export const ButtonLeft = styled.button`
-  position: fixed;
-  height: 100vh;
-  width: 50vw;
-  top: 0;
-  left: 0;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  &:hover,
-  &:focus {
-    background: transparent;
-    outline: none;
-  }
-`;
-
-export const ButtonRight = styled.button`
-  position: fixed;
-  height: 100vh;
-  width: 50vw;
-  top: 0;
-  right: 0;
-  background-color: transparent;
-  border: none;
-  outline: none;
-`;
