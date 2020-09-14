@@ -32,6 +32,13 @@ export const ButtonLeft = styled.button`
   background-color: transparent;
   border: none;
   outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &:hover,
+  &:focus {
+    background: transparent;
+    outline: none;
+  }
 `;
 
 export const ButtonRight = styled.button`
